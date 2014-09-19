@@ -78,7 +78,7 @@ def download_testimonials():
 
 		for i in range(0,len(public_testimonials('p'))/2):
 			name_of_person = public_testimonials('p')[2*i+1].text.encode('utf-8')
-			name_of_person = name_of_person[10:]			#otherwise, name_of_person comes out to be &dash&nbsp<Name> 
+			name_of_person = name_of_person[13:]			#otherwise, name_of_person comes out to be &dash&nbsp<Name> 
 			file1.write(name_of_person)		#encoding done because some characters weren't getting converted by default. 
 			file1.write("\n-----------------------------------\n")
 			file1.write(public_testimonials('p')[2*i].text.encode('utf-8'))
@@ -86,7 +86,9 @@ def download_testimonials():
 		file1.close()
 
 		for i in range(0,len(private_testimonials('p'))/2):
-			file2.write(private_testimonials('p')[2*i+1].text.encode('utf-8'))
+			name_of_person = private_testimonials('p')[2*i+1].text.encode('utf-8')
+			name_of_person = name_of_person[13:]
+			file2.write(name_of_person)
 			file2.write("\n-----------------------------------\n")
 			file2.write(private_testimonials('p')[2*i].text.encode('utf-8'))
 			file2.write("\n\n\n\n")
