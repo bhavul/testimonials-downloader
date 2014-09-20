@@ -20,7 +20,7 @@ def download_testimonials():
 	username = raw_input("Username : ")
 	password = getpass.getpass("Password : ")
 
-	cookie_file = 'moodle.cookiesbypython'
+	cookie_file = 'melange.cookiesbypython'
 
 	# set up a cookie jar to store cookies
 	cj = cookielib.MozillaCookieJar(cookie_file)
